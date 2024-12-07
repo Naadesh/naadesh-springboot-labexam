@@ -41,37 +41,41 @@ This project is a Spring Boot application developed as part of a lab exam. The a
 ```bash
 git clone https://github.com/naadesh/naadesh-springboot-labexam.git
 cd naadesh-springboot-labexam
+```
 
-
-2. Configure the Database
-Create a database named labexam in MySQL.
-Update application.properties with your MySQL username and password:
-properties
-Copy code
+### 2. Configure the Database  
+- Create a database named **`labexam`** in MySQL.  
+- Update `application.properties` with your MySQL username and password:  
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/labexam
 spring.datasource.username=yourusername
 spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
-3. Insert Initial Data
-Run the following SQL query to insert sample data into the book table:
+```
 
-sql
-Copy code
+### 3. Insert Initial Data  
+Run the following SQL query to insert sample data into the `book` table:  
+```sql
 INSERT INTO book (book_id, title, author, genre, price, published_year) 
 VALUES (1, 'Spring Boot Basics', 'John Doe', 'Programming', 500, 2023);
-4. Run the Application
-bash
-Copy code
+```
+
+### 4. Run the Application  
+Run the Spring Boot application using Maven.  
+```bash
 mvn spring-boot:run
-API Usage
-Update a Book (PUT Request)
-Endpoint: http://localhost:8080/api/books/{id}
+```
 
-Replace {id} with the ID of the book to update.
-Request Body (JSON):
+---
 
-json
-Copy code
+## **API Usage**  
+
+### **Update a Book (PUT Request)**  
+**Endpoint:** `http://localhost:8080/api/books/{id}`  
+- Replace `{id}` with the ID of the book to update.
+
+**Request Body (JSON):**  
+```json
 {
   "title": "Advanced Spring Boot",
   "author": "Jane Doe",
@@ -79,15 +83,21 @@ Copy code
   "price": 650,
   "publishedYear": 2024
 }
-Response:
+```
+
+**Response:**  
 The updated book details will be returned in JSON format.
 
-Testing
-Use Postman to test the PUT endpoint.
-Ensure the database is updated successfully after sending the request.
-Repository Structure
-bash
-Copy code
+---
+
+## **Testing**  
+1. Use **Postman** to test the PUT endpoint.  
+2. Ensure the database is updated successfully after sending the request.  
+
+---
+
+## **Repository Structure**  
+```bash
 src/
 ├── main/
 │   ├── java/com/klef/jfsd/exam/
@@ -97,14 +107,11 @@ src/
 │   │   ├── controller/   # API endpoints
 │   ├── resources/
 │       ├── application.properties  # Database configuration
-Author
-Naadesh
+```
 
-GitHub: Naadesh
-csharp
-Copy code
+---
 
-
-
-
-
+## **Author**  
+**Naadesh**  
+- GitHub: [Naadesh](https://github.com/naadesh)
+```
